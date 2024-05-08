@@ -14,14 +14,18 @@ import static com.sddk.conflictclassreplacer.presentation.ConsoleHelper.*;
 
 public class Console {
 
-    private String localProjectPath = null;
-    private String targetProjectPath = null;
+    private final String localProjectPath;
+    private final String targetProjectPath;
     private List<FileModel> allLocalFiles = null;
     private List<FileModel> allTargetFiles = null;
     private List<ConflictFileModel> allConflictFiles = null;
 
 
-    public Console() {
+    public Console(String[] args) {
+
+        localProjectPath = args[0];
+        targetProjectPath = args[1];
+
         askForPackage();
         getAllFiles();
         getConflictFiles();
@@ -30,23 +34,8 @@ public class Console {
     }
 
 
-    public void getArgsFromTerminal(String args) {
-        if (args.isEmpty()) {
-
-        }
-
-    }
 
     public void askForPackage() {
-
-        writeInfoLn("Write the package paths");
-        blankLine();
-
-        Scanner scanner = new Scanner(System.in);
-        writeInfo("Local package -> ");
-        localProjectPath = scanner.next();
-        writeInfo("Target package -> ");
-        targetProjectPath = scanner.next();
 
         tabBlank();
         writeInfo("Local Package: ");
