@@ -125,7 +125,7 @@ public class Console {
 
         String answer = "";
         do {
-            writeInfoLn("Do you want to replace imports? (Y/N)");
+            writeInfoLn("Do you want to DELETE Local Files? (Y/N)");
             Scanner scanner = new Scanner(System.in);
             answer = scanner.next();
         } while (!answer.equals("y") && !answer.equals("n") && !answer.equals("Y") && !answer.equals("N"));
